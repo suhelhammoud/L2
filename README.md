@@ -43,7 +43,7 @@ Sample preliminary raw results for test experiments can be downloaded from [data
 
 
 ## Imbalance Sampler Filter
-[ImbalanceClassSampler](https://github.com/suhelhammoud/L2/tree/master/src/weka/filters/supervised/instance) is supervised-instance based filter. It uses random sampling (with replacement). This filter was added to help generating datasets with "deliberate" unbalanced class label distribution. This is to test the performance of L2 in such settings in comparision to CHI and IG attribute selection algorithms.
+[ImbalanceClassSampler](https://github.com/suhelhammoud/L2/tree/master/src/weka/filters/supervised/instance) is supervised-instance based filter. It uses random sampling (with replacement). This filter was added to help generating datasets with "deliberate" unbalanced class label distribution. This is to test the performance of L2 in such settings in comparision to CHI and IG attribute selection algorithms. Sample results are uploaded to [data/experiments](data/experiments).
 Dataset must have a binary class attribute.
 If the ratio parameter is set to -1 then keep same class distribution in the newly generated dataset
 Use the filter in Weka Software as follows:
