@@ -16,11 +16,11 @@ Sample preliminary raw results for test experiments can be downloaded from [data
 
 ## Running L2 method
 
-* Download  [WekaL2.jar](downloads/wekaL2-1.0.jar "downloads/wekaL2-x.x.jar")  file and double click on it.
+* Download  [WekaL2-1.1.jar](downloads/weka.L2-1.1.jar "downloads/wekaL2-x.x.jar")  file and double click on it.
  Also, you can run it using the command:
  
  ```bash
- java -jar wekaL2-1.0.jar
+ java -jar weka.L2-1.1.jar
  ```
   This will open WEKA with L2 included as an attribute selection method
 * Datasets are available on [UCI](http://repository.seasr.org/Datasets/UCI/arff/) or on the cached copy in [data/arff](data/arff) folder.
@@ -40,3 +40,24 @@ Sample preliminary raw results for test experiments can be downloaded from [data
 * L2 can be used with classifiers by applying it as an evaluation method in the supervised "AttributeSelection" filter. 
 
 <img src="docs/images/l2_filter.png" width="650px"/>
+
+
+## Imbalance Sampler Filter
+[ImbalanceClassSampler](https://github.com/suhelhammoud/L2/tree/master/src/weka/filters/supervised/instance) is supervised-instance based filter. It uses random sampling (with replacement). This filter was added to help generating datasets with "deliberate" unbalanced class label distribution. This is to test the performance of L2 in such settings in comparision to CHI and IG attribute selection algorithms.
+Dataset must have a binary class attribute.
+If the ratio parameter is set to -1 then keep same class distribution in the newly generated dataset
+Use the filter in Weka Software as follows:
+
+* Choose the filter.
+<img src="docs/images/imbalance_filter.png" width="650px"/>
+
+* Set the parameters, set ratio of first label class to be 0.2 (%20)
+<img src="docs/images/imbalance_filter_parameters.png" width="650px"/>
+
+* Dataset (Cleve) original label distibution.
+<img src="docs/images/before_filter.png" width="650px"/>
+
+* Dataset label distribution after applying "ImbalanceClassSampler" filter.
+<img src="docs/images/after_fitler.png" width="650px"/>
+
+

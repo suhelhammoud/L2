@@ -25,6 +25,7 @@ import weka.attributeSelection.ASEvaluation;
 import weka.attributeSelection.SubsetEvaluator;
 import weka.core.*;
 import weka.core.Capabilities.Capability;
+import weka.core.TechnicalInformation.Field;
 import weka.core.TechnicalInformation.Type;
 import weka.filters.Filter;
 import weka.filters.supervised.attribute.Discretize;
@@ -107,7 +108,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @see Discretize
  */
 public class VaCfsEval extends ASEvaluation implements SubsetEvaluator,
-        ThreadSafe, OptionHandler, TechnicalInformationHandler {
+    ThreadSafe, OptionHandler, TechnicalInformationHandler {
 
   //TODO needs revising to prune all unnecessary base code taken from GreedyStepwise source
   /**

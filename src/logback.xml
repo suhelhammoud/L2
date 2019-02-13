@@ -1,0 +1,61 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+             ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <!--<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+            <pattern>%d{mm:ss.SSS} %-5level %logger{5}.%M %L - %msg%n</pattern>
+            <!--<pattern>- %msg%n</pattern>-->
+
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
+
+<!--
+<configuration>
+
+    <timestamp key="bySecond" datePattern="HH-mm-ss"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender" >
+         <append>true</append>
+
+        <encoder>
+            <pattern>%d{mm:ss.SSS} %-5level %logger{0}.%M %L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender" >
+        <file>logs/PrismMod-log-${bySecond}.txt</file>
+        <append>true</append>
+
+        <encoder>
+            <pattern>%d{mm:ss.SSS} %-5level %logger{0}.%M %L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FREQS" class="ch.qos.logback.core.FileAppender">
+        <file>logs/frequencies-log-${bySecond}.txt</file>
+        <append>true</append>
+
+        <encoder>
+            <pattern> %msg%n</pattern>
+        </encoder>
+    </appender>
+
+<logger name="freqs">
+<appender-ref ref="FREQS" />
+</logger>
+
+
+<root level="trace"  >
+<appender-ref ref="STDOUT"  />
+</root>
+        </configuration>
+-->
